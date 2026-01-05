@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe3f1, #ffd6ea, #fff0f7);
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+    color: #2b2b2b;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+}
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+p {
+    line-height: 1.6;
+}
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 40px;
+    color: #b1005a;
+}
+
+.tagline {
+    margin-top: 8px;
+    color: #6b2a4a;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 22px;
+    padding: 26px;
+    box-shadow: 0 18px 45px rgba(177, 0, 90, 0.12);
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 10%;
+    border: 4px solid #ff9ecf;
+
+}
+
+
+
+    @media (max-width: 600px) {
+    .header h1 {
+        font-size: 30px;
+    }
+    .profile-pic {
+        width: 140px;
+        height: 140px;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+}
+/* ===== Photography Gallery Layout ===== */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;          /* zooms OUT instead of cropping */
+    background-color: #ffeaf3;    /* soft pink background */
+    padding: 10px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 105, 180, 0.25);
+    box-shadow: 0 10px 25px rgba(177, 0, 90, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 16px 35px rgba(255, 105, 180, 0.25);
+}
