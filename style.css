@@ -115,3 +115,26 @@ p {
     transform: scale(1.03);
     box-shadow: 0 16px 35px rgba(255, 105, 180, 0.25);
 }
+.link-buttons{
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.link-btn{
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #ffb6d5;
+  color: #7a003c;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(255,182,213,0.6);
+  transition: all 0.25s ease;
+}
+
+.link-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(255,182,213,0.9);
+}
