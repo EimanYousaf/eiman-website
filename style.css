@@ -13,6 +13,8 @@ body {
     color: #2b2b2b;
 }
 
+/* ===== TYPOGRAPHY ===== */
+
 h1, h2 {
     font-family: 'Dancing Script', cursive;
 }
@@ -27,7 +29,6 @@ h2 {
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
     font-size: 0.95rem;
     line-height: 1.7;
 }
@@ -37,24 +38,34 @@ p {
     max-width: 800px;
 }
 
-/* ===== TOP NAV ===== */
+/* ===== HEADER ===== */
 
-.link-buttons.top-nav {
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 40px;
+    color: #b1005a;
+}
+
+.tagline {
+    margin-top: 8px;
+    color: #6b2a4a;
+}
+
+/* ===== NAV BUTTONS ===== */
+
+.link-buttons {
     display: flex;
-    justify-content: center;
     gap: 14px;
+    justify-content: center;
+}
 
-    position: sticky;
-    top: 12px;
-    z-index: 1000;
-
-    margin-bottom: 18px;
-    padding: 12px;
-
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(10px);
-    border-radius: 18px;
-    box-shadow: 0 10px 28px rgba(177, 0, 90, 0.12);
+.nav-below-header {
+    margin-bottom: 22px;
 }
 
 .link-btn {
@@ -75,7 +86,43 @@ p {
     box-shadow: 0 10px 22px rgba(255,182,213,0.9);
 }
 
-/* ===== HEADER ===== */
+/* ===== CARD ===== */
 
-.header {
-    text-align: center
+.card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 22px;
+    padding: 26px;
+    box-shadow: 0 18px 45px rgba(177, 0, 90, 0.12);
+    text-align: center;
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 10%;
+    border: 4px solid #ff9ecf;
+    margin: 14px 0;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #6b2a4a;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .link-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
