@@ -358,3 +358,97 @@ footer {
 .cards a.card:hover{
     color: inherit;
 }
+.fashion-hero{
+    min-height: 620px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    border-top: 1px solid #b89b5e;
+    border-bottom: 1px solid #b89b5e;
+    background: linear-gradient(90deg, #f5f0e8 0%, #f5f0e8 35%, #d8d0c3 100%);
+}
+
+.fashion-text{
+    padding: 100px 7vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fashion-text h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 110px;
+    line-height: .9;
+    margin: 20px 0;
+}
+
+.fashion-visual{
+    position: relative;
+    overflow: hidden;
+    min-height: 620px;
+    background: radial-gradient(circle at center, #f9f4eb 0%, #c9c0b0 55%, #8f8578 100%);
+}
+
+.disco-ball{
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    position: absolute;
+    top: 80px;
+    right: 120px;
+    background:
+        linear-gradient(45deg, rgba(255,255,255,.7) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,.6) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(0,0,0,.15) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0,0,0,.12) 75%);
+    background-size: 35px 35px;
+    background-color: #b7b0a4;
+    box-shadow: 0 0 60px rgba(255,255,255,.9), inset -30px -30px 50px rgba(0,0,0,.25), inset 30px 30px 40px rgba(255,255,255,.7);
+    animation: spin 8s linear infinite;
+}
+
+.disco-ball::before{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 90px;
+    background: #2b2925;
+    top: -90px;
+    left: 50%;
+}
+
+.martini-glass{
+    position: absolute;
+    bottom: 55px;
+    right: 180px;
+    font-size: 120px;
+    opacity: .85;
+}
+
+@keyframes spin{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+.fashion-tabs{
+    display: flex;
+    gap: 55px;
+    padding: 35px 6vw 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.fashion-grid{
+    padding: 0 6vw 70px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.fashion-grid img{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border: 1px solid #c6ab73;
+    background: #f3eee6;
+}
