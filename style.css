@@ -284,3 +284,60 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* PHOTOGRAPHY PAGE */
+
+.page-hero {
+    max-width: 1180px;
+    margin: 80px auto 55px;
+}
+
+.page-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4.5rem, 11vw, 9rem);
+    line-height: 0.85;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+
+.photo-grid {
+    max-width: 1180px;
+    margin: 40px auto 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #b9a86f;
+    filter: grayscale(8%) contrast(1.03);
+    transition: 0.35s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.02);
+    filter: grayscale(0%) contrast(1.05);
+}
+
+@media (max-width: 850px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-grid img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 520px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-grid img {
+        height: 320px;
+    }
+}
