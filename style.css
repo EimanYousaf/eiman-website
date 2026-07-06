@@ -452,3 +452,62 @@ footer {
     border: 1px solid #c6ab73;
     background: #f3eee6;
 }
+/* FASHION PAGE */
+
+.fashion-art {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    background: #b8b0a1;
+    overflow: hidden;
+}
+
+.chain {
+    position: absolute;
+    top: 55px;
+    left: 72%;
+    width: 2px;
+    height: 110px;
+    background: #111;
+    transform: rotate(38deg);
+    transform-origin: top;
+}
+
+.disco-ball {
+    position: absolute;
+    top: 150px;
+    left: 62%;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background:
+        linear-gradient(45deg, rgba(255,255,255,0.6) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(0,0,0,0.12) 25%, transparent 25%),
+        linear-gradient(135deg, rgba(255,255,255,0.45) 25%, transparent 25%),
+        linear-gradient(-135deg, rgba(0,0,0,0.1) 25%, transparent 25%),
+        #d8d4ca;
+    background-size: 42px 42px;
+    box-shadow:
+        0 0 45px rgba(255, 255, 255, 0.55),
+        inset -25px -25px 45px rgba(0,0,0,0.18),
+        inset 18px 18px 40px rgba(255,255,255,0.7);
+    animation: spinBall 18s linear infinite;
+}
+
+.martini {
+    position: absolute;
+    bottom: 60px;
+    right: 210px;
+    font-size: 85px;
+    filter: drop-shadow(0 12px 14px rgba(0,0,0,0.25));
+}
+
+@keyframes spinBall {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
