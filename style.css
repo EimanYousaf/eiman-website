@@ -454,60 +454,87 @@ footer {
 }
 /* FASHION PAGE */
 
-.fashion-art {
+.fashion-hero {
+    max-width: 1180px;
+    margin: 80px auto 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.fashion-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(5rem, 12vw, 10rem);
+    line-height: 0.85;
+    letter-spacing: -3px;
+    margin-bottom: 28px;
+}
+
+.fashion-visual {
     position: relative;
-    width: 100%;
-    height: 520px;
-    background: #b8b0a1;
+    height: 480px;
+    background: #b7b0a3;
+    border: 1px solid #b9a86f;
     overflow: hidden;
 }
 
+/* chain stays still */
 .chain {
     position: absolute;
-    top: 55px;
-    left: 72%;
+    top: 70px;
+    left: 50%;
     width: 2px;
-    height: 110px;
+    height: 90px;
     background: #111;
-    transform: rotate(38deg);
-    transform-origin: top;
+    transform: translateX(-50%);
+    z-index: 3;
 }
 
-.disco-ball {
+/* holder stays still */
+.ball-holder {
     position: absolute;
-    top: 150px;
-    left: 62%;
-    width: 230px;
-    height: 230px;
+    top: 155px;
+    left: 50%;
+    width: 215px;
+    height: 215px;
+    transform: translateX(-50%);
+}
+
+/* only the inner pattern spins */
+.disco-ball {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background:
-        linear-gradient(45deg, rgba(255,255,255,0.6) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(255,255,255,0.75) 25%, transparent 25%),
         linear-gradient(-45deg, rgba(0,0,0,0.12) 25%, transparent 25%),
-        linear-gradient(135deg, rgba(255,255,255,0.45) 25%, transparent 25%),
+        linear-gradient(135deg, rgba(255,255,255,0.5) 25%, transparent 25%),
         linear-gradient(-135deg, rgba(0,0,0,0.1) 25%, transparent 25%),
-        #d8d4ca;
-    background-size: 42px 42px;
+        #d9d5cb;
+    background-size: 38px 38px;
     box-shadow:
-        0 0 45px rgba(255, 255, 255, 0.55),
+        0 0 45px rgba(255,255,255,0.65),
         inset -25px -25px 45px rgba(0,0,0,0.18),
-        inset 18px 18px 40px rgba(255,255,255,0.7);
-    animation: spinBall 18s linear infinite;
+        inset 18px 18px 40px rgba(255,255,255,0.75);
+    animation: discoPattern 8s linear infinite;
 }
 
-.martini {
-    position: absolute;
-    bottom: 60px;
-    right: 210px;
-    font-size: 85px;
-    filter: drop-shadow(0 12px 14px rgba(0,0,0,0.25));
-}
-
-@keyframes spinBall {
+/* this makes it look like the ball is spinning, not flipping around */
+@keyframes discoPattern {
     from {
-        transform: rotate(0deg);
+        background-position: 0 0;
     }
 
     to {
-        transform: rotate(360deg);
+        background-position: 76px 0;
     }
+}
+
+.martini-glass {
+    position: absolute;
+    bottom: 54px;
+    right: 88px;
+    font-size: 78px;
+    filter: drop-shadow(0 12px 12px rgba(0,0,0,0.22));
 }
