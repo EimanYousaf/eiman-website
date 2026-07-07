@@ -53,7 +53,7 @@ body {
     color: #9b7a2d;
 }
 
-/* HERO */
+/* HOME HERO */
 
 .hero {
     max-width: 1180px;
@@ -118,7 +118,7 @@ body {
     transform: translateY(-4px);
 }
 
-/* PHOTO */
+/* HOME PHOTO */
 
 .photo-card {
     justify-self: center;
@@ -158,7 +158,8 @@ body {
     margin-bottom: 12px;
 }
 
-.section h2 {
+.section h2,
+.fashion-category h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(3rem, 6vw, 5.5rem);
     margin-bottom: 25px;
@@ -229,6 +230,192 @@ body {
     line-height: 1.7;
 }
 
+.cards a.card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.cards a.card p,
+.cards a.card h3,
+.cards a.card span {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* PHOTOGRAPHY PAGE */
+
+.page-hero {
+    max-width: 1180px;
+    margin: 80px auto 55px;
+}
+
+.page-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4.5rem, 11vw, 9rem);
+    line-height: 0.85;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+
+.photo-grid {
+    max-width: 1180px;
+    margin: 40px auto 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #b9a86f;
+    filter: grayscale(8%) contrast(1.03);
+    transition: 0.35s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.02);
+    filter: grayscale(0%) contrast(1.05);
+}
+
+/* FASHION PAGE */
+
+.fashion-hero {
+    max-width: 1180px;
+    margin: 80px auto 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #b9a86f;
+    border-bottom: 1px solid #b9a86f;
+}
+
+.fashion-text {
+    padding: 90px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fashion-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(5rem, 12vw, 9rem);
+    line-height: 0.85;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+
+.fashion-text .intro {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.fashion-visual {
+    position: relative;
+    min-height: 560px;
+    background: #b3ab9d;
+    border-left: 1px solid #b9a86f;
+    overflow: hidden;
+}
+
+.chain {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 150px;
+    background: #111;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.ball-holder {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 230px;
+    height: 230px;
+    transform: translateX(-50%);
+}
+
+.disco-ball {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        linear-gradient(45deg, #ffffff 25%, transparent 25%),
+        linear-gradient(-45deg, #d8d3ca 25%, transparent 25%),
+        linear-gradient(135deg, #f8f8f8 25%, transparent 25%),
+        linear-gradient(-135deg, #c8c3bb 25%, transparent 25%),
+        #ded8ce;
+    background-size: 34px 34px;
+    box-shadow:
+        0 0 90px rgba(255,255,255,.45),
+        inset -25px -25px 35px rgba(0,0,0,.14),
+        inset 20px 20px 35px rgba(255,255,255,.65);
+    animation: discoSpin 18s linear infinite;
+}
+
+@keyframes discoSpin {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 68px 68px;
+    }
+}
+
+.martini-glass {
+    position: absolute;
+    left: 50%;
+    top: 430px;
+    transform: translateX(-50%);
+    font-size: 78px;
+    filter: drop-shadow(0 12px 14px rgba(0,0,0,.25));
+}
+
+.fashion-tabs {
+    max-width: 1180px;
+    margin: 0 auto 45px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.fashion-tabs span {
+    padding: 10px 20px;
+    border: 1px solid #111;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.fashion-category {
+    max-width: 1180px;
+    margin: 0 auto 70px;
+    padding-top: 45px;
+    border-top: 1px solid #b9a86f;
+}
+
+.fashion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.fashion-grid img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #b9a86f;
+}
+
 /* FOOTER */
 
 footer {
@@ -243,7 +430,7 @@ footer {
 
 /* MOBILE */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     body {
         padding: 20px;
     }
@@ -283,52 +470,37 @@ footer {
     .cards {
         grid-template-columns: 1fr;
     }
-}
-/* PHOTOGRAPHY PAGE */
 
-.page-hero {
-    max-width: 1180px;
-    margin: 80px auto 55px;
-}
-
-.page-hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(4.5rem, 11vw, 9rem);
-    line-height: 0.85;
-    letter-spacing: -3px;
-    margin-bottom: 30px;
-}
-
-.photo-grid {
-    max-width: 1180px;
-    margin: 40px auto 80px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.photo-grid img {
-    width: 100%;
-    height: 330px;
-    object-fit: cover;
-    display: block;
-    border: 1px solid #b9a86f;
-    filter: grayscale(8%) contrast(1.03);
-    transition: 0.35s ease;
-}
-
-.photo-grid img:hover {
-    transform: scale(1.02);
-    filter: grayscale(0%) contrast(1.05);
-}
-
-@media (max-width: 850px) {
     .photo-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .photo-grid img {
         height: 250px;
+    }
+
+    .fashion-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .fashion-text {
+        padding: 65px 30px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .fashion-visual {
+        min-height: 540px;
+        border-left: none;
+        border-top: 1px solid #b9a86f;
+    }
+
+    .fashion-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fashion-grid img {
+        height: 360px;
     }
 }
 
@@ -340,201 +512,4 @@ footer {
     .photo-grid img {
         height: 320px;
     }
-}
-/* Make linked cards look like normal cards */
-.cards a.card{
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.cards a.card p,
-.cards a.card h3,
-.cards a.card span{
-    color: inherit;
-    text-decoration: none;
-}
-
-.cards a.card:hover{
-    color: inherit;
-}
-.fashion-hero{
-    min-height: 620px;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    border-top: 1px solid #b89b5e;
-    border-bottom: 1px solid #b89b5e;
-    background: linear-gradient(90deg, #f5f0e8 0%, #f5f0e8 35%, #d8d0c3 100%);
-}
-
-.fashion-text{
-    padding: 100px 7vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.fashion-text h1{
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 110px;
-    line-height: .9;
-    margin: 20px 0;
-}
-
-.fashion-visual{
-    position: relative;
-    overflow: hidden;
-    min-height: 620px;
-    background: radial-gradient(circle at center, #f9f4eb 0%, #c9c0b0 55%, #8f8578 100%);
-}
-
-.disco-ball{
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    position: absolute;
-    top: 80px;
-    right: 120px;
-    background:
-        linear-gradient(45deg, rgba(255,255,255,.7) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255,255,255,.6) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(0,0,0,.15) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(0,0,0,.12) 75%);
-    background-size: 35px 35px;
-    background-color: #b7b0a4;
-    box-shadow: 0 0 60px rgba(255,255,255,.9), inset -30px -30px 50px rgba(0,0,0,.25), inset 30px 30px 40px rgba(255,255,255,.7);
-    animation: spin 8s linear infinite;
-}
-
-.disco-ball::before{
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 90px;
-    background: #2b2925;
-    top: -90px;
-    left: 50%;
-}
-
-.martini-glass{
-    position: absolute;
-    bottom: 55px;
-    right: 180px;
-    font-size: 120px;
-    opacity: .85;
-}
-
-@keyframes spin{
-    from{ transform: rotate(0deg); }
-    to{ transform: rotate(360deg); }
-}
-
-.fashion-tabs{
-    display: flex;
-    gap: 55px;
-    padding: 35px 6vw 25px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 13px;
-}
-
-.fashion-grid{
-    padding: 0 6vw 70px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-}
-
-.fashion-grid img{
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border: 1px solid #c6ab73;
-    background: #f3eee6;
-}
-/* FASHION PAGE */
-
-.fashion-hero {
-    max-width: 1180px;
-    margin: 80px auto 70px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 60px;
-}
-
-.fashion-text h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(5rem, 12vw, 10rem);
-    line-height: 0.85;
-    letter-spacing: -3px;
-    margin-bottom: 28px;
-}
-
-.fashion-visual {
-    position: relative;
-    height: 480px;
-    background: #b7b0a3;
-    border: 1px solid #b9a86f;
-    overflow: hidden;
-}
-
-/* chain stays still */
-.chain {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    width: 2px;
-    height: 90px;
-    background: #111;
-    transform: translateX(-50%);
-    z-index: 3;
-}
-
-/* holder stays still */
-.ball-holder {
-    position: absolute;
-    top: 155px;
-    left: 50%;
-    width: 215px;
-    height: 215px;
-    transform: translateX(-50%);
-}
-
-/* only the inner pattern spins */
-.disco-ball {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background:
-        linear-gradient(45deg, rgba(255,255,255,0.75) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(0,0,0,0.12) 25%, transparent 25%),
-        linear-gradient(135deg, rgba(255,255,255,0.5) 25%, transparent 25%),
-        linear-gradient(-135deg, rgba(0,0,0,0.1) 25%, transparent 25%),
-        #d9d5cb;
-    background-size: 38px 38px;
-    box-shadow:
-        0 0 45px rgba(255,255,255,0.65),
-        inset -25px -25px 45px rgba(0,0,0,0.18),
-        inset 18px 18px 40px rgba(255,255,255,0.75);
-    animation: discoPattern 8s linear infinite;
-}
-
-/* this makes it look like the ball is spinning, not flipping around */
-@keyframes discoPattern {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 76px 0;
-    }
-}
-
-.martini-glass {
-    position: absolute;
-    bottom: 54px;
-    right: 88px;
-    font-size: 78px;
-    filter: drop-shadow(0 12px 12px rgba(0,0,0,0.22));
 }
